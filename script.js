@@ -1,13 +1,14 @@
 
 /**
  * Generates the quiz buttons and functionality given the question set.
- * @param {any} questions the questions displayed in the quiz
- * @param {any} quizContainer the container that displays the quiz questions
- * @param {any} resultsContainer the container that displays the Correct or Wrong text
- * @param {any} submitButton button to check current answer
- * @param {any} nextButton button to go to next question
+ * @param {{question: string, answers: {label: string, value: string}[], correctAnswer: string}[]} questions questions the questions displayed in the quiz
+ * @param {HTMLElement} quizContainer the container that displays the quiz questions
+ * @param {HTMLElement} resultsContainer the container that displays the Correct or Wrong text
+ * @param {HTMLButtonElement} submitButton button to check current answer
+ * @param {HTMLButtonElement} nextButton button to go to next question
+ * @param {HTMLButtonElement} previousButton button to go to previous question
  */
-function generateQuiz(questions, quizContainer, resultsContainer, submitButton, nextButton){
+function generateQuiz(questions, quizContainer, resultsContainer, submitButton, nextButton, previousButton){
     var i = 0; 
     
     function showResults(userAnswer){
@@ -41,14 +42,17 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton, 
             '<div class="question">' + questions[i].question + '</div>'
             + '<div class="answers">' + answers.join("") + '</div>'; 
     }
-    
-    function nextQuestion(){
-        i++; 
-        setQuestion()
-    }
+
     setQuestion();
+
     nextButton.addEventListener("click", function(){
-        nextQuestion(); 
+        i++;
+        setQuestion();
+    })
+
+    previousButton.addEventListener("click", function(){
+        i--;
+        setQuestion(); 
     })
 
     submitButton.addEventListener("click", function(){
@@ -59,7 +63,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton, 
 /**
  * Shuffles the given question array for random order.
  * @param {any} questions question array to be shuffled
- * @returns {Array.<{question: string, answers: {label: string, value: string}[], correctAnswer: string}}>} 
+ * @returns {{question: string, answers: {label: string, value: string}[], correctAnswer: string}[]} questions array shuffled
  */
 function shuffleQuestions(questions){
     const shuffled = [...questions]; 
@@ -89,7 +93,9 @@ window.onload = function() {
     const quizContainer = this.document.getElementById("quizContainer"); 
     const submitButton = this.document.getElementById("submitButton"); 
     const nextButton = this.document.getElementById("nextButton");
+    const previousButton = this.document.getElementById("previousButton"); 
     const resultsContainer = this.document.getElementById("resultsContainer"); 
-    generateQuiz(questions, quizContainer, resultsContainer, submitButton, nextButton)
+        
+    generateQuiz(questions, quizContainer, resultsContainer, submitButton, nextButton, previousButton);
     
 }
