@@ -1,7 +1,13 @@
 
 /**
  * Generates the quiz buttons and functionality given the question set.
- * @param {{question: string, answers: {label: string, value: string}[], correctAnswer: string}[]} questions questions the questions displayed in the quiz
+ * @param {{
+ *   question: string,
+ *   answers: Record<string, string>,
+ *   correctAnswer: string,
+ *   code?: string
+ * }[]} questions the question set for the quiz
+ * 
  * @param {HTMLElement} quizContainer the container that displays the quiz questions
  * @param {HTMLElement} resultsContainer the container that displays the Correct or Wrong text
  * @param {HTMLButtonElement} submitButton button to check current answer
@@ -9,7 +15,7 @@
  * @param {HTMLButtonElement} previousButton button to go to previous question
  */
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton, nextButton, previousButton){
-    var i = 0; 
+    let i = 0; 
     
     function showResults(userAnswer){
         
@@ -25,7 +31,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton, 
 
     function setQuestion(){
         
-        var answers = [];
+        let answers = [];
 
         for(letter in questions[i].answers){
             answers.push(
@@ -37,8 +43,13 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton, 
             )
         }
 
+        const code = questions[i].code ? `<div class="code">${questions[i].code}</div>`: ""; 
+
+        resultsContainer.innerHTML = ""; 
+
         quizContainer.innerHTML = 
             '<div class="question">' + questions[i].question + '</div>'
+            + code
             + '<div class="answers">' + answers.join("") + '</div>'
             + '<div class="qnum">' + (i+1) + "/" + questions.length + '</div>';
     }
@@ -55,6 +66,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton, 
     })
 
     previousButton.addEventListener("click", function(){
+        if(i === 0) return; 
         i--;
         setQuestion(); 
     })
@@ -92,9 +104,18 @@ window.onload = function() {
     const urlParams = new URLSearchParams(window.location.search);
     const quizType = urlParams.get('type'); 
     document.getElementById('type').textContent = quizType
-    console.log(quizType);
 
-    const questions = shuffleQuestions(window.traceQuestions); 
+    const qMap = {
+        Tracing: window.traceQuestions,
+        Recursion: window.recursionQuestions
+    }; 
+
+    const questions = qMap[quizType]; 
+
+    if(!questions){
+        this.alert("404 - Topic Type Not Found! :(");
+        window.location.href = "index.html"; 
+    }
 
     const quizContainer = this.document.getElementById("quizContainer"); 
     const submitButton = this.document.getElementById("submitButton"); 
