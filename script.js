@@ -71,11 +71,6 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton, 
     })
 }
 
-/**
- * Shuffles the given question array for random order.
- * @param {any} questions question array to be shuffled
- * @returns {{question: string, answers: {label: string, value: string}[], correctAnswer: string}[]} questions array shuffled
- */
 function shuffleQuestions(questions){
     const shuffled = [...questions]; 
     let currentIndex = shuffled.length; 

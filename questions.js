@@ -1,15 +1,21 @@
 window.traceQuestions = [
     {
-        question: "What is 10/2?",
+        question: `
+        <h3>What is the result of the following algorithm?</h3>
+        int i = 0
+        int j = 1
+        out.println(i+++j)
+        
+        `,
         answers: {
-            a: '3', 
-            b: '5', 
+            a: '1', 
+            b: '2', 
             c: '115'
         }, 
-        correctAnswer: 'b'
+        correctAnswer: 'a'
     }, 
     {
-        question: "Is santi a chud?",
+        question: "blah blah blah",
         answers: {
             a: 'True', 
             b: 'False'
