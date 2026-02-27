@@ -12,8 +12,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton, 
     var i = 0; 
     
     function showResults(userAnswer){
-        console.log(userAnswer)
-        console.log(questions[i])
+        
         if(questions[i].correctAnswer === userAnswer){
             resultsContainer.innerHTML =
                 '<div class="correct">Correct!</div>';
@@ -40,12 +39,17 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton, 
 
         quizContainer.innerHTML = 
             '<div class="question">' + questions[i].question + '</div>'
-            + '<div class="answers">' + answers.join("") + '</div>'; 
+            + '<div class="answers">' + answers.join("") + '</div>'
+            + '<div class="qnum">' + (i+1) + "/" + questions.length + '</div>';
     }
 
     setQuestion();
 
     nextButton.addEventListener("click", function(){
+        if(i + 1 >= questions.length){
+            alert("You have reached the last question!")
+            return; 
+        }
         i++;
         setQuestion();
     })
@@ -56,7 +60,14 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton, 
     })
 
     submitButton.addEventListener("click", function(){
-        showResults(document.querySelector('input[name="answerInput"]:checked').value); 
+        const selected = document.querySelector('input[name="answerInput"]:checked')
+
+        if(!selected){
+            alert("Please select an answer choice!");
+            return; 
+        }
+
+        showResults(selected.value); 
     })
 }
 
