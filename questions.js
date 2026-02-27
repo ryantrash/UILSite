@@ -1,12 +1,12 @@
+// The question set for the tracing problems
 window.traceQuestions = [
     {
-        question: `
-        <h3>What is the result of the following algorithm?</h3>
-        int i = 0
-        int j = 1
-        out.println(i+++j)
-        
-        `,
+        question: 'What is the output of the following code?', 
+        code: `
+        int i = 0; 
+        int j = 1; 
+        out.println(i+++j); 
+        `, 
         answers: {
             a: '1', 
             b: '2', 
@@ -21,5 +21,16 @@ window.traceQuestions = [
             b: 'False'
         },
         correctAnswer: 'a'
+    }
+]
+window.recursionQuestions = [
+    {
+        question: 'Recursion question goes here:',
+        answers: {
+            a: 'yes!!!',
+            b: 'no.',
+            c: 'maybe?'
+        },
+        correctAnswer: 'c'
     }
 ]
