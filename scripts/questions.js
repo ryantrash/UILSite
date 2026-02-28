@@ -1,5 +1,27 @@
+/**
+ * Represents the answer choices for a question.
+ * Keys are answer ids (a,b,c,d), values are the labels (3, true, etc.)
+ * @typedef {Object.<string, string>} Answers 
+ */
+
+/**
+ * A quiz question
+ * @typedef {Object} Question
+ * @property {string} question - The question text for the problem
+ * @property {string} [code] - Optional code snippet paired alongside the question
+ * @property {Answers} answers - Answer choices keyed by id
+ * @property {string} [level] - Optional level of the problem (district, invitational, etc)
+ * @property {string} correctAnswer - The id of the correct answer
+ */
+
 const urlParams = new URLSearchParams(window.location.search);
 const quizType = urlParams.get('type');
+
+/**
+ * Global question list populated based on url quiz type
+ * @type {Question[]} 
+ */
+window.questions = []; 
 
 // The question set for the tracing problems
 if (quizType === "Tracing") {
@@ -222,15 +244,15 @@ out.print(p);
             question: "Which of the following best describes the method shown on the right?",
             code: `
 public static int method(int[][] m) {
-int a=0;
-for(int x=0;x<m.length;x++) {
-int r=0;
-for(int y=0;y<m[x].length;y++)
-if(m[x][y]>r)
-r=m[x][y];
-a+=r;
-}
-return a;
+    int a=0;
+    for(int x=0;x<m.length;x++) {
+        int r=0;
+        for(int y=0;y<m[x].length;y++)
+            if(m[x][y]>r)
+                r=m[x][y];
+        a+=r;
+    }
+    return a;
 }
 `,
             answers: {
