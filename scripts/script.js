@@ -44,7 +44,12 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton, 
             )
         }
 
-        const code = questions[i].code ? `<div class="code">${questions[i].code}</div>` : "";
+        const code = questions[i].code ? `<div class="code">
+        ${questions[i].code
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+        }</div>` : "";
         const level = questions[i].level ? `<div class="level">${questions[i].level}</div>` : "";
 
         resultsContainer.innerHTML = "";
