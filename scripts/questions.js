@@ -356,6 +356,444 @@ out.print(U);
             level: 'District',
             correctAnswer: 'd'
         },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+int L = 512;
+int M = L / 100;
+int N = (L - M * 100) / 10;
+int R = L % 10;
+int U = R*100 + M*10 + N;
+out.print(U);
+`,
+            answers: {
+                a: '0',
+                b: '9',
+                c: '16',
+                d: '22',
+                e: '25'
+            },
+            level: 'District',
+            correctAnswer: 'd'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+int A = 10;
+int B = 12;
+int C = 27;
+out.print(A+B+"A"+C+A+"B"+('A'+B));
+`,
+            answers: {
+                a: '22A37BA12',
+                b: '22A2710B77',
+                c: '22A2710BA12',
+                d: '22A2710BA12',
+                e: '22A37BAB'
+            },
+            level: 'District',
+            correctAnswer: 'b'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+int D = 10;
+int R = 2;
+int P = 4;
+if (D + R > P)
+    P = D;
+else
+    D = P;
+if (D + P > R)
+    R = D;
+else
+    D = R;
+if (P + R > D)
+    D++;
+else
+    D--;
+out.print(D + " " + P + " " + R);
+`,
+            answers: {
+                a: '10 2 4',
+                b: '11 10 11',
+                c: '10 10 10',
+                d: '11 10 10',
+                e: '10 10 11'
+            },
+            level: 'District',
+            correctAnswer: 'b'
+        },
+        // 2023 Regional
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+int D = 10;
+int R = 2;
+int P = 4;
+if (D + R > P)
+    P = D;
+else
+    D = P;
+if (D + P > R)
+    R = D;
+else
+    D = R;
+if (P + R > D)
+    D++;
+else
+    D--;
+out.print(D + " " + P + " " + R);
+`,
+            answers: {
+                a: '10 2 4',
+                b: '11 10 11',
+                c: '10 10 10',
+                d: '11 10 10',
+                e: '10 10 11'
+            },
+            level: 'Regional',
+            correctAnswer: 'd'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+int[] perfect = new int[25];
+for(int x=0; x<24; x++)
+    perfect[x] = x * x - 1;
+out.print(perfect[10] - perfect[8]);
+`,
+            answers: {
+                a: '32',
+                b: '34',
+                c: '35',
+                d: '36',
+                e: '38'
+            },
+            level: 'Regional',
+            correctAnswer: 'd'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+int z = 0;
+for(int x=1, y=-5; x<=12; x++, y++)
+    z = x * y;
+out.print(z);
+`,
+            answers: {
+                a: '60',
+                b: '72',
+                c: '66',
+                d: '55',
+                e: '-66'
+            },
+            level: 'Regional',
+            correctAnswer: 'b'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+int z = 0;
+for(int x=1, y=-5; x<=12; x++, y++)
+    z = x * y;
+out.print(z);
+`,
+            answers: {
+                a: '60',
+                b: '72',
+                c: '66',
+                d: '55',
+                e: '-66'
+            },
+            level: 'Regional',
+            correctAnswer: 'b'
+        },{
+            question: "What is the output of the code segment to the right?",
+            code: `
+int z = 0;
+for(int x=1, y=-5; x<=12; x++, y++)
+    z = x * y;
+out.print(z);
+`,
+            answers: {
+                a: '60',
+                b: '72',
+                c: '66',
+                d: '55',
+                e: '-66'
+            },
+            level: 'Regional',
+            correctAnswer: 'b'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+String[]L = {"BOB","JEN","SAM","PAM","MEL"};
+String St = "";
+for(int x=1;x<=3;x++)
+{
+    St += L[x-1].substring(0,1);
+    St += L[x].substring(1,2);
+    St += L[x+1].substring(2,3);
+}
+out.print(St);
+`,
+            answers: {
+                a: 'BEMJALSAM',
+                b: 'BESOEMSAL',
+                c: 'BOBJENSAM',
+                d: 'BSJEAANNL',
+                e: 'BEMJAMSAL'
+            },
+            level: 'Regional',
+            correctAnswer: 'e'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+int[][]BP = new int[8][8];
+BP[1][1] = 1;
+for (int y = 2; y<=7; y++)
+    for (int x = 1; x<=7; x++)
+        BP[y][x]= BP[y-1][x]+BP[y-1][x-1];
+out.print(BP[6][5]);
+`,
+            answers: {
+                a: '1',
+                b: '4',
+                c: '5',
+                d: '6',
+                e: '10'
+            },
+            level: 'Regional',
+            correctAnswer: 'c'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+String One = "ABCDE";
+String Two = "";
+for(int x=0; x<One.length(); x++)
+    Two = One.substring(x,x+1) + Two;
+out.print(Two);
+`,
+            answers: {
+                a: 'ABCDE',
+                b: 'EDCBA',
+                c: 'ABCDEEDCBA',
+                d: 'ABCDEDCBA',
+                e: 'AABBCCDDEE'
+            },
+            level: 'Regional',
+            correctAnswer: 'b'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+String One = "ABCDE";
+String Two = "";
+for(int x=0; x<One.length(); x++)
+    Two = One.substring(x,x+1) + Two;
+out.print(Two);
+`,
+            answers: {
+                a: 'ABCDE',
+                b: 'EDCBA',
+                c: 'ABCDEEDCBA',
+                d: 'ABCDEDCBA',
+                e: 'AABBCCDDEE'
+            },
+            level: 'Regional',
+            correctAnswer: 'b'
+        },
+        //2025 state
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+boolean a = false;
+boolean b = true;
+a |= a ^ b & !b | a;
+b ^= b ^ !a & a | !b;
+out.print(a ^ b | a);
+`,
+            answers: {
+                a: 'true',
+                b: 'false',
+            },
+            level: 'State',
+            correctAnswer: 'b'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+double c = 4.5;
+c = Math.nextAfter(c, -7);
+String s = "" + c;
+s = s.substring(0, 4);
+out.printf("%.2f %s",c,s);
+`,
+            answers: {
+                a: '4.00 4.00',
+                b: '4.50 4.49',
+                c: '4.50 4.50',
+                d: '-3.50, -3.5',
+                e: 'There is no output due to a runtime error.'
+            },
+            level: 'State',
+            correctAnswer: 'b'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+int i = -7;
+if(i < 0 | i++ > -10)
+    out.print(1);
+if(i > 0 && i-- < 10)
+    out.print(2);
+else out.print(3);
+out.print(i);
+`,
+            answers: {
+                a: '12-7',
+                b: '13-7',
+                c: '2-7',
+                d: '13-6',
+                e: '3-6'
+            },
+            level: 'State',
+            correctAnswer: 'd'
+        },
+        {
+            question: "What is output by the line marked //q09 in the code to the right?",
+            code: `
+int[][] mat = new int[3][5];
+for(int r = 0; r < 3; r++)
+    for(int c = 4; c >= 0; c--)
+    mat[r][c] =
+        (r + 1) * 5 + (c - 1) * c - 2;
+out.println
+    (Arrays.toString(mat[2])); //q09
+for(int i = 0; i < 4; i ++) {
+    if(i != 3) {
+        mat[i][i] = mat[i][i + 1];
+        mat[i][i]--;
+    } if(i != 0) {
+        mat[i - 1][i + 1] =
+            mat[i - 1][i - 1];
+        mat[i - 1][i]++;
+    }
+    mat[0][i] += i;
+    mat[1][i] -= i;
+}
+out.println
+    (Arrays.toString(mat[1])); //q10
+`,
+            answers: {
+                a: '[13, 13, 15, 19, 25]',
+                b: '[8, 8, 10, 14, 20]',
+                c: '[17, 15, 15, 17, 21]',
+                d: '[12, 10, 10, 12, 16]',
+                e: 'There is no output due to a runtime error.'
+            },
+            level: 'State',
+            correctAnswer: 'a'
+        },
+        {
+            question: "What is output by the line marked //q10 in the code to the right?",
+            code: `
+int[][] mat = new int[3][5];
+for(int r = 0; r < 3; r++)
+    for(int c = 4; c >= 0; c--)
+    mat[r][c] =
+        (r + 1) * 5 + (c - 1) * c - 2;
+out.println
+    (Arrays.toString(mat[2])); //q09
+for(int i = 0; i < 4; i ++) {
+    if(i != 3) {
+        mat[i][i] = mat[i][i + 1];
+        mat[i][i]--;
+    } if(i != 0) {
+        mat[i - 1][i + 1] =
+            mat[i - 1][i - 1];
+        mat[i - 1][i]++;
+    }
+    mat[0][i] += i;
+    mat[1][i] -= i;
+}
+out.println
+    (Arrays.toString(mat[1])); //q10
+`,
+            answers: {
+                a: '[8, 6, 9, 3, 20]',
+                b: '[8, 9, 8, 6, 20]',
+                c: '[12, 8, 9, 5, 16]',
+                d: '[8, 8, 9, 5, 20]',
+                e: 'There is no output due to a runtime error.'
+            },
+            level: 'State',
+            correctAnswer: 'd'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+int i = 4;
+switch(5) {
+    case 4: i += 10;
+    case 2: i++;
+        break;
+    default: i += 100;
+}
+out.print(i);
+`,
+            answers: {
+                a: '4',
+                b: '104',
+                c: '15',
+                d: '105',
+                e: 'There is no output due to a compile error.'
+            },
+            level: 'State',
+            correctAnswer: 'b'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+double x = 0, y = 0;
+x /= y--;
+y = Math.sqrt(y);
+out.print((y == x) + " ");
+out.println(y);
+`,
+            answers: {
+                a: 'true i',
+                b: 'false 0',
+                c: 'false NaN',
+                d: 'true NaN',
+                e: 'There is no output due to a compile error.'
+            },
+            level: 'State',
+            correctAnswer: 'c'
+        },
+                {
+            question: "What is the output of the code segment to the right?",
+            code: `
+double x = 0, y = 0;
+x /= y--;
+y = Math.sqrt(y);
+out.print((y == x) + " ");
+out.println(y);
+`,
+            answers: {
+                a: 'true i',
+                b: 'false 0',
+                c: 'false NaN',
+                d: 'true NaN',
+                e: 'There is no output due to a compile error.'
+            },
+            level: 'State',
+            correctAnswer: 'c'
+        },
     ]
 }
 
