@@ -775,7 +775,7 @@ out.println(y);
             level: 'State',
             correctAnswer: 'c'
         },
-                {
+        {
             question: "What is the output of the code segment to the right?",
             code: `
 double x = 0, y = 0;
@@ -793,6 +793,185 @@ out.println(y);
             },
             level: 'State',
             correctAnswer: 'c'
+        },
+        // 2021 State
+         {
+            question: "What is the output of the code segment to the right?",
+            code: `
+int m = 35, n = 18; 
+double x = 19, y = 9.25; 
+double r = m + x / n * y; 
+r = (int)(r + 0.5); 
+out.print(r);
+`,
+            answers: {
+                a: '44.5',
+                b: '44',
+                c: '45.5',
+                d: '45.0',
+                e: '44.0'
+            },
+            level: 'State',
+            correctAnswer: 'd'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+int x = 2147483647; 
+int y = 0; 
+while(x > 0) { 
+ switch(x % 10) { 
+  case 1: 
+  case 2: 
+  case 3: y++;break; 
+  case 4: 
+  case 5: 
+  case 6: y+=3;break; 
+  case 7: y*=2;break; 
+  default: y/=2; 
+ } 
+ x/=10;  
+} 
+out.print(y);
+`,
+            answers: {
+                a: '19',
+                b: '4',
+                c: '17',
+                d: '18',
+                e: '26'
+            },
+            level: 'State',
+            correctAnswer: 'c'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+String s = "computersciences"; 
+char[] c = s.toCharArray(); 
+int a = c.length / 2; 
+for(int i = 0; i < a; i++) { 
+  char b = c[i]; 
+  c[i] = c[i + a]; 
+  c[i + a] = b; 
+} 
+for(char d:c) 
+  out.print(d); 
+`,
+            answers: {
+                a: 'secneicsretupmoc',
+                b: 'sciencescomputer',
+                c: 'csocmipeuntceers',
+                d: 'retupmocsecneics',
+                e: 'There is no output due to an error.'
+            },
+            level: 'State',
+            correctAnswer: 'b'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+double x = 5.0, y = 0.0; 
+for(;x < 6.0;) 
+{ 
+  y += 0.5; 
+  x += 0.2; 
+} 
+out.print(y); 
+`,
+            answers: {
+                a: '2.5',
+                b: '2.0',
+                c: '3.0',
+                d: '6.0',
+                e: 'There is no output due to an error.'
+            },
+            level: 'State',
+            correctAnswer: 'a'
+        },
+        {
+            question: "Which of the following best describes what the method shown below will return?",
+            code: `
+public static double method(double x) { 
+  double m = x / 2; 
+  double n = 0.0; 
+  while(true) { 
+    n = (m + x / m) / 2.0; 
+    if((int)(m * 1000 + 0.5) / 1000.0 == (int)(n * 1000 + 0.5) / 1000.0) 
+      break; 
+    m = n; 
+  } 
+  return (int)(n * 100 + 0.5) / 100.0; 
+} 
+`,
+            answers: {
+                a: 'log_10(x) rounded to four decimal places.',
+                b: 'sqrt(x) rounded to two decimal places.',
+                c: 'log_2(x) rounded to two decimal places.',
+                d: 'x^2 rounded to four decimal places.',
+                e: 'The average of the values between 0.0 and x rounded to two decimal places.' 
+            },
+            level: 'State',
+            correctAnswer: 'b'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+int count = 0; 
+int x = 1; 
+do { 
+  int y = 1; 
+  while(y <= 7) { 
+    for(int z = 1; z <= 4; z++) 
+      count++; 
+    y++; 
+  } 
+  x++; 
+}while(x <= 10); 
+out.print(count);
+`,
+            answers: {
+                a: '70',
+                b: '280',
+                c: '440',
+                d: '350',
+                e: '4'
+            },
+            level: 'State',
+            correctAnswer: 'b'
+        },
+        {
+            question: "What is the output of the code segment to the right?",
+            code: `
+public static void main(String[] args) { 
+  out.print(method1("193")); 
+} 
+  
+public static int method1(String s) { 
+  int x = 0; 
+  for(int i = 0; i < s.length(); i++) { 
+    char c = s.charAt(i); 
+    x = x * 16 + method2(c); 
+    } 
+  return x; 
+  } 
+  
+public static int method2(char c) { 
+  if(c >= 65 && c <= 70) 
+    return 10 + c - 65; 
+  else 
+    return c - 48; 
+} 
+`,
+            answers: {
+                a: '400',
+                b: '355',
+                c: '403',
+                d: 'None of these are correct.',
+                e: 'There is no output due to an error.'
+            },
+            level: 'State',
+            correctAnswer: 'b'
         },
     ]
 }
