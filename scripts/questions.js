@@ -422,7 +422,7 @@ out.print(D + " " + P + " " + R);
                 e: '10 10 11'
             },
             level: 'District',
-            correctAnswer: 'b'
+            correctAnswer: 'd'
         },
         // 2023 Regional
         {
@@ -1074,14 +1074,105 @@ out.print(Y);
 // The question set for the bases / numbers problems. 
 if (quizType === "Data Structures") {
     window.questions = [
+        // 2025 state
         {
-            question: 'data question goes here:',
+            question: `Which of the following could replace <1*> for the code to the right to compile without error?`,
+            code: `
+public void scan()throws <1*>{
+    File f = new File("a.dat");
+    Scanner sc = new Scanner(f);
+    sc.nextLine();
+    out.print(sc.nextLine());
+}
+            `,
             answers: {
-                a: 'yes!!!',
-                b: 'no.',
-                c: 'maybe?'
+                a: "IOException",
+                b: "FileNotFoundException", 
+                c: "Exception",
+                d: "Only A or C",
+                e: "Any of the above will work."
             },
-            correctAnswer: 'c'
-        }
+            correctAnswer: 'e',
+            level: 'State' 
+        },
+        {
+            question: `What is output by the code to the right?`,
+            code: `
+ArrayList<String> a;
+a = new ArrayList<String>();
+a.add("Bumblebee");
+a.add("Optimus");
+a.add(1,"RC");
+a.set(0, "Ironhide");
+if(!a.contains(new String("RC")))
+    a.add(1, "RC");
+out.println(a);
+            `,
+            answers: {
+                a: "[Ironhide, RC, Bumblebee, RC, Optimus]",
+                b: "[Ironhide, RC, RC, Optimus]", 
+                c: "[Ironhide, RC, Optimus]",
+                d: "[Ironhide, Bumblebee, RC, Optimus]",
+                e: "There is no output due to a runtime error."
+            },
+            correctAnswer: 'c',
+            level: 'State' 
+        },
+        {
+            question: `What is the asymptotic time complexity of the code to the right?`,
+            code: `
+PriorityQueue<Integer> pq;
+pq = new PriorityQueue<Integer>
+    (Collections.reverseOrder());
+for(int y = 0; y < N; y++) {
+    double d = Math.random() * 100;
+    pq.add((int)(d));
+}
+out.println(pq);
+            `,
+            answers: {
+                a: "O(nlogn)",
+                b: "O(logn)",
+                c: "O(n)",
+                d: "O(n^2)",
+                e: "O(n^2logn)"
+            },
+            correctAnswer: 'a',
+            level: 'State' 
+        },
+         {
+            question: `Which data structure is demonstrated by the code to the right?`,
+            code: `
+PriorityQueue<Integer> pq;
+pq = new PriorityQueue<Integer>
+    (Collections.reverseOrder());
+for(int y = 0; y < N; y++) {
+    double d = Math.random() * 100;
+    pq.add((int)(d));
+}
+out.println(pq);
+            `,
+            answers: {
+                a: "Queue",
+                b: "Min-Heap",
+                c: "Linked List",
+                d: "Max-Heap",
+                e: "Stack"
+            },
+            correctAnswer: 'd',
+            level: 'State' 
+        },
+        {
+            question: `Which of the following pairings does not properly match the data structure in question to the worst-case asymptotic time complexity of the operation on that structure?`,
+            answers: {
+                a: "O(1) random access using an Array.",
+                b: "O(1) find min using a Min-Heap",
+                c: "O(logn) search using a Tree Set",
+                d: "O(1) search using a Hash Set.",
+                e: "O(logn) search using a Binary Search Tree"
+            },
+            correctAnswer: 'e',
+            level: 'State' 
+        },
     ]
 }
