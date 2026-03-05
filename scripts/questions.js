@@ -12,7 +12,15 @@
  * @property {Answers} answers - Answer choices keyed by id
  * @property {string} correctAnswer - The id of the correct answer
  * @property {string} [level] - Optional level of the problem (district, invitational, etc)
- * @property {string[]} tags - The tags of the question. Tags should be indentical to the quizTypes provided in index.html
+ * @property {string[]} tags - The tags of the question.
+ * Current Tags Include: 
+ * 1. Tracing - Problems that require in depth tracing of algorithms.
+ * 2. Recursion - Problems that require a recursive approach (function calls itself)
+ * 3. Numbers - Problems involving mathematical reasoning or general number concepts.
+ * 4. Boolean - Problems involving boolean logic and algebra.
+ * 5. Misc. - Problems that are ultra-specific and do not fall into any other category. 
+ * ___
+ * If you need a new tag, please update the jsDoc to reflect it. 
  */
 
 const urlParams = new URLSearchParams(window.location.search);
