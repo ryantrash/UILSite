@@ -432,5 +432,180 @@ out.print(i);//line #2
         correctAnswer: 'a',
         level: 'State',
         tags: ["Data Structures"]
-    },//q23
+    },
+    {
+        question: "What is the output of line #2 in the code segment shown on the right?",
+        code: `
+TreeMap<Integer,Integer> tm=new 
+TreeMap<Integer,Integer>();
+tm.put(225, 1);
+tm.put(541, 2);
+tm.put(102, 4);
+tm.put(312, 3);
+tm.put(299, 2);
+out.println(tm);//line #1
+int i=tm.ceilingEntry(300).getValue();
+out.print(i);//line #2
+        `,
+        answers: {
+            a: "2",
+            b: "3",
+            c: `312`,
+            d: `299`,
+            e: "300",
+        },
+        correctAnswer: 'b',
+        level: 'State',
+        tags: ["Data Structures"]
+    },
+    {
+        question: "What is printed by the main method shown on the right?",
+        code: `
+public static void main(String[] args) {
+    long n=4;
+    out.print(f(n));
+}
+public static long f(long n) {
+    if(n<=1)
+        return 1;
+    else
+    return 5+f(n-1)+f(n-2);
+}
+        `,
+        answers: {
+            a: "45",
+            b: "20",
+            c: `43`,
+            d: `13`,
+            e: "25",
+        },
+        correctAnswer: 'e',
+        level: 'State',
+        tags: ["Recursion"]
+    },
+    {
+        question: "Which of the following best describes the error within the interface shown to the right?",
+        code: `
+public interface Shape {
+ public double area();
+ public double perimeter();
+}
+        `,
+        answers: {
+            a: "The signature must contain the keyword implements.",
+            b: "The interface does not contain a constructor.",
+            c: `The area and perimeter methods must be implemented.`,
+            d: `Shape must be declared as final and contain fields that are declared as final.`,
+            e: "There are no errors in the code shown. The interface Shape will compile and execute as intended.",
+        },
+        correctAnswer: 'e',
+        level: 'State',
+        tags: ["Misc", "Inheritance"]
+    },
+    {
+        question: "Which of the following statements is false?",
+        answers: {
+            a: "An object cannot be instantiated from an abstract class.",
+            b: "It is possible to define an abstract class that does not contain any abstract methods.",
+            c: `A subclass can extend multiple abstract classes.`,
+            d: `A subclass can be abstract even if its superclass is concrete.`,
+            e: "A class that contains abstract methods must be abstract.",
+        },
+        correctAnswer: 'c',
+        level: 'State',
+        tags: ["Misc", "Inheritance"]
+    },
+    {
+        question: "What is the run time efficiency (Big O value) of the segment of code shown on the right?",
+        answers: {
+            a: "O(n log n)",
+            b: "O(x log y)",
+            c: `O(log n)`,
+            d: `O(n^2)`,
+            e: "O(n^x log y)",
+        },
+        correctAnswer: 'a',
+        level: 'State',
+        tags: ["Misc"]
+    },
+    {
+        question: "What is the output of the code segment shown on the right?",
+        code: `
+int[][][] a=
+{{{3,2,1},{1,2,3},{6,5,4}},
+{{4,5,6},{9,5,1},{7,5,3}},
+{{8,5,2},{1,2,4},{8,4,3}}};
+int sum=0;
+for(int x=0;x<3;x+=2)
+    for(int y=0;y<3;y+=2)
+        for(int z=0;z<3;z+=2)
+            sum+=a[x][y][z];
+out.print(sum);
+
+        `,
+        answers: {
+            a: "47",
+            b: "27",
+            c: `33`,
+            d: `35`,
+            e: "Error. Throws an ArrayIndexOutOfBoundsException.",
+        },
+        correctAnswer: 'd',
+        level: 'State',
+        tags: ["Tracing"]
+    },
+    {
+        question: "When n is a power of 2, which of the following is always equivalent to m%n?",
+        answers: {
+            a: "m&n",
+            b: "m& (n-1)",
+            c: `m| (n-1)`,
+            d: `m^n`,
+            e: "m^ (n-1)",
+        },
+        correctAnswer: 'b',
+        level: 'State',
+        tags: ["Number", "Misc"]
+    },
+    {
+        question: "Which of the following would best replace <code 1> in the sort method implemented above to ensure that list is sorted in ascending order?",
+        code: `
+public static void sort(int[] list, int startIndex)
+{
+if ( startIndex >= list.length - 1 )
+    return;
+int minIndex = startIndex;
+for ( <code 1> )
+    if (list[index] < list[minIndex] )
+        minIndex = index;
+int temp = list[startIndex];
+list[startIndex] = list[minIndex];
+list[minIndex] = temp;
+sort(<code 2>);
+}
+        `,
+        answers: {
+            a: " int index = 0; index < list.length-1; index++",
+            b: "int index = startIndex - 1; index < list.length; index++",
+            c: `int index = startIndex + 1; index < list.length; index++`,
+            d: `int index = startIndex + 1; index < minIndex; index++`,
+            e: "int index = startIndex + 1; index < list.length-1; index++",
+        },
+        correctAnswer: 'c',
+        level: 'State',
+        tags: ["Tracing", "Recursion"]
+    },
+    {
+        question: "If both values are shown using signed 8-bit 2's complement representation, what is 11101101 minus 11100100? Write your answer using signed 8-bit 2's complement notation.",
+        answers: {
+            a: "10001000",
+            b: "11001001",
+            c: `01001000`,
+            d: `00001001`,
+            e: "00000110",
+        },
+        correctAnswer: 'd',
+        level: 'State',
+        tags: ["Number","Misc"]
+    },
 ];
