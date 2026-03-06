@@ -17,7 +17,8 @@
  */
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton, nextButton, previousButton) {
     let i = 0;
-    const correct = new Audio("assets/correct.mp3")
+    const correct = new Audio("assets/correct.mp3");
+
     function showResults(userAnswer) {
 
         if (questions[i].correctAnswer === userAnswer) {
@@ -122,7 +123,7 @@ window.onload = function () {
     document.getElementById('type').textContent = quizType
 
     let questions = []; 
-    console.log(questions)
+
     for(q in window.questions){
         let tags = window.questions[q].tags; 
 
@@ -146,5 +147,4 @@ window.onload = function () {
     const resultsContainer = this.document.getElementById("resultsContainer");
 
     generateQuiz(questions, quizContainer, resultsContainer, submitButton, nextButton, previousButton);
-
 }
