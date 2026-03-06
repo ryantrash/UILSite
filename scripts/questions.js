@@ -524,6 +524,11 @@ public interface Shape {
     },
     {
         question: "What is the run time efficiency (Big O value) of the segment of code shown on the right?",
+        code: `
+for(int x=0;x<n;x+=4)
+    for(int y=1;y<n;y*=3)
+        out.print("Big O");
+        `,
         answers: {
             a: "O(n log n)",
             b: "O(x log y)",
@@ -1365,7 +1370,7 @@ public static void main(String[] args)
             d: "throws Exception",
             e: "This class does not require a throws declaration."
         },
-        correctAnswer: 'A',
+        correctAnswer: 'e',
         level: 'State',
         tags: ["Misc"]
     },
