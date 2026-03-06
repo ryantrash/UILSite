@@ -1777,4 +1777,140 @@ public static int method(int i, int j)
         level: 'State',
         tags: ["Recursion", "Tracing"]
     },
+    {
+        question: 'Which of the following is not equivalent to the expression 25237 + AB716?',
+        answers: {
+            a: '2856 base 11',
+            b: '7153 base 8',
+            c: '1161 base 15',
+            d: '104231 base 5',
+            e: 'All are equivalent'
+        },
+        correctAnswer: 'e',
+        level: 'District',
+        tags: ['Numbers']
+    },
+    {
+        question: 'What is output by the code?',
+        code: 'out.println(1 + 2 * 3 - 4 / 5);',
+        answers: {
+            a: '1',
+            b: '9',
+            c: '7',
+            d: '0',
+            e: 'There is no output due to a compile error.'
+        },
+        correctAnswer: 'c',
+        level: 'District',
+        tags: ['Numbers']
+    },
+    {
+        question: 'What is output by the code',
+        code: 'out.printf("%3S","abcde");',
+        answers: {
+            a: 'abcde',
+            b: 'abc',
+            c: 'ABCDE',
+            d: 'ABC',
+            e: 'There is no output due to a runtime error.'
+        },
+        correctAnswer: 'c',
+        level: 'District',
+        tags: ['String']
+    },
+    {
+        question: 'What is output by the code?',
+        code: `
+String str = \"CountDooku\";
+str = str.substring(0,8);
+str += str.charAt(3);
+out.println(str.substring(2));
+`,
+        answers: {
+            a: 'untDoot',
+            b: 'ntDookt',
+            c: 'ntDookn',
+            d: 'untDoon',
+            e: 'There is no output due to a runtime error.'
+        },
+        correctAnswer: 'd',
+        level: 'District',
+        tags: ['String','Tracing']
+    },
+    {
+        question: 'What is output by the code?',
+        code: `
+boolean a = false;
+boolean b = true;
+a |= !b & a ^ b & !a;
+out.println(a);
+        `,
+        answers: {
+            a: 'true',
+            b: 'false',
+            c: 'There is no output due to a syntax error.'
+        },
+        correctAnswer: 'a',
+        level: 'District',
+        tags: ['Boolean','Tracing']
+    },
+    {
+        question: 'What is output by the code?',
+        code: `
+int y = 9;
+double x = 8.0;
+out.print(Math.max(y,x));
+        `,
+        answers: {
+            a: '9',
+            b: '8',
+            c: '8.0',
+            d: '9.0',
+            e: 'There is no output due to a runtime error.'
+        },
+        correctAnswer: 'd',
+        level: 'District',
+        tags: ['Numbers','Tracing']
+    },
+    {
+        question: 'What is output by the code?',
+        code: `
+int i = 0, ii = 10, n = 0;
+for(;i <= ii;) {
+    ii++;
+    i += ii / 10;
+    n++;
+}
+out.println(n+" "+ii);
+        `,
+        answers: {
+            a: '22 32',
+            b: '20 30',
+            c: '21 31',
+            d: '19 29',
+            e: 'There is no output due to a runtime error.'
+        },
+        correctAnswer: 'b',
+        level: 'District',
+        tags: ['Tracing','Numbers']
+    },
+    {
+        question: 'What is output by the code?',
+        code:`
+int a = 34 + 21 & 9;
+int b = a | 39 % 7;
+a ^= b * 9 / 5;
+out.println(a);
+        `,
+        answers: {
+            a: '101',
+            b: '8',
+            c: '36',
+            d: '6',
+            e: 'There is no output due to a runtime error.'
+        },
+        correctAnswer: 'b',
+        level: 'District',
+        tags: ['Tracing','Numbers']
+    },
 ];
